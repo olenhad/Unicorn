@@ -51,6 +51,7 @@ public class GUI extends javax.swing.JFrame {
         result.setAlgo1text(out1);
         result.setAlgo2text(out2);
         result.setAlgo3text(out3);
+        result.setAlgoTimeLabels(main.Algo1Time, main.Algo2Time, main.Algo3Time);
         
     }
     private String[] getInput(){

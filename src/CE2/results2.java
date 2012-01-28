@@ -22,6 +22,11 @@ public class results2 extends javax.swing.JFrame {
     public void setAlgo3text(String S){
         Algo3TextArea.setText(S);
     }
+    public void setAlgoTimeLabels(String a1, String a2, String a3){
+        Algo1TimeLabel.setText(a1);
+        Algo2TimeLabel.setText(a2);
+        Algo3TimeLabel.setText(a3);
+    }
     public results2() {
         initComponents();
     }
@@ -62,6 +67,9 @@ public class results2 extends javax.swing.JFrame {
         Algo1Time = new javax.swing.JLabel();
         Algo2Time = new javax.swing.JLabel();
         Algo3Time = new javax.swing.JLabel();
+        Algo1TimeLabel = new javax.swing.JLabel();
+        Algo2TimeLabel = new javax.swing.JLabel();
+        Algo3TimeLabel = new javax.swing.JLabel();
 
         Algo1TextArea.setColumns(20);
         Algo1TextArea.setRows(5);
@@ -152,6 +160,12 @@ public class results2 extends javax.swing.JFrame {
 
         Algo3Time.setText("Algo3:");
 
+        Algo1TimeLabel.setText("...");
+
+        Algo2TimeLabel.setText("...");
+
+        Algo3TimeLabel.setText("...");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,9 +177,18 @@ public class results2 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4)
-                    .addComponent(Algo1Time)
-                    .addComponent(Algo2Time)
-                    .addComponent(Algo3Time))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Algo1Time)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Algo1TimeLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Algo2Time)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Algo2TimeLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(Algo3Time)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(Algo3TimeLabel)))
                 .addGap(145, 145, 145)
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
@@ -187,11 +210,17 @@ public class results2 extends javax.swing.JFrame {
                         .addGap(57, 57, 57)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Algo1Time)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Algo1Time)
+                            .addComponent(Algo1TimeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Algo2Time)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Algo2Time)
+                            .addComponent(Algo2TimeLabel))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Algo3Time)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Algo3Time)
+                            .addComponent(Algo3TimeLabel))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -202,11 +231,14 @@ public class results2 extends javax.swing.JFrame {
     private javax.swing.JPanel Algo1;
     private javax.swing.JTextArea Algo1TextArea;
     private javax.swing.JLabel Algo1Time;
+    private javax.swing.JLabel Algo1TimeLabel;
     private javax.swing.JPanel Algo2;
     private javax.swing.JTextArea Algo2TextArea;
     private javax.swing.JLabel Algo2Time;
+    private javax.swing.JLabel Algo2TimeLabel;
     private javax.swing.JTextArea Algo3TextArea;
     private javax.swing.JLabel Algo3Time;
+    private javax.swing.JLabel Algo3TimeLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
