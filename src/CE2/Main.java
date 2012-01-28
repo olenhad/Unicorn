@@ -183,7 +183,7 @@ public class Main {
 		int i = this.slst.size() + 1;
 		int weight = this.budget + 1;
 		String[] ans = this.recursion(i-1, weight-1);
-		this.Algo2Res = ans;
+		this.Algo3Res = ans;
 		return ans;
 	}
 	
@@ -329,7 +329,7 @@ public class Main {
 		answer[0] = toString(maxsat);
 		answer[1] = temp;
 		
-		this.Algo3Res = answer;
+		this.Algo2Res = answer;
 		return answer;
 
 	}
