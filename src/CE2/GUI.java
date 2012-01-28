@@ -17,9 +17,9 @@ public class GUI extends javax.swing.JFrame {
      * Creates new form GUI
      * 
      */
-    public String Algo1Chosen="1";
-    public String Algo2Chosen="1";
-    public String Algo3Chosen="1";
+    public String Algo1Chosen="0";
+    public String Algo2Chosen="0";
+    public String Algo3Chosen="0";
     public Main main;
     public results2 result; 
     public ArrayList<String> InputList = new ArrayList();
@@ -29,16 +29,24 @@ public class GUI extends javax.swing.JFrame {
     }
     private void configOutput(){
         String out1= "";
+        if("1".equals(Algo1Chosen)){
         for(int i=0;i< main.Algo1Res.length;i++){
             out1=out1+"\n"+ main.Algo1Res[i];
         }
+        }
+        
         String out2= "";
+        if("1".equals(Algo2Chosen)){
         for(int i=0;i< main.Algo2Res.length;i++){
             out2=out2+"\n"+ main.Algo2Res[i];
         }
+        }
+        
         String out3 ="";
+        if("1".equals(Algo3Chosen)){
         for(int i=0;i< main.Algo3Res.length;i++){
             out3=out3+"\n"+ main.Algo3Res[i];
+        }
         }
         result.setAlgo1text(out1);
         result.setAlgo2text(out2);
@@ -115,7 +123,7 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-        Algo3Box.setText("bla");
+        Algo3Box.setText("Recursion");
         Algo3Box.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Algo3BoxActionPerformed(evt);
@@ -212,16 +220,35 @@ public class GUI extends javax.swing.JFrame {
 
     private void Algo1BoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Algo1BoxActionPerformed
         // TODO add your handling code here:
+        if(Algo1Box.isSelected()){
+            Algo1Chosen="1";
+        }
+        else{
+            Algo1Chosen="0";
+        }
+       
         
     }//GEN-LAST:event_Algo1BoxActionPerformed
 
     private void Algo2BoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Algo2BoxActionPerformed
         // TODO add your handling code here:
+        if(Algo2Box.isSelected()){
+            Algo2Chosen="1";
+        }
+        else{
+            Algo2Chosen="0";
+        }
         
     }//GEN-LAST:event_Algo2BoxActionPerformed
 
     private void Algo3BoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Algo3BoxActionPerformed
         // TODO add your handling code here:
+        if(Algo3Box.isSelected()){
+            Algo3Chosen="1";
+        }
+        else{
+            Algo3Chosen="0";
+        }
         
     }//GEN-LAST:event_Algo3BoxActionPerformed
 
