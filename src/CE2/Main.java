@@ -11,6 +11,9 @@ public class Main {
 	public String[] Algo1Res;
 	public String[] Algo2Res;
 	public String[] Algo3Res;
+        public boolean Algo1Done=false;
+        public boolean Algo2Done=false;
+        public boolean Algo3Done=false;
 	public String Algo1Time; 
 	public String Algo2Time;
 	public String Algo3Time;
@@ -128,6 +131,7 @@ public class Main {
 		answer[0] = memo[this.slst.size()][budget] + "";
 		answer[1] = items[this.slst.size()][budget];
 		this.Algo1Res = answer;
+                Algo1Done=true;
 		return answer;
 	}
 	
@@ -184,6 +188,7 @@ public class Main {
 		int weight = this.budget + 1;
 		String[] ans = this.recursion(i-1, weight-1);
 		this.Algo3Res = ans;
+                Algo3Done= true;
 		return ans;
 	}
 	
@@ -330,6 +335,7 @@ public class Main {
 		answer[1] = temp;
 		
 		this.Algo2Res = answer;
+                Algo2Done=true;
 		return answer;
 
 	}
@@ -535,6 +541,63 @@ public class Main {
 			returrn = s;
 		}
 		return returrn;
+	}
+        private String printans(String s, String sat){
+		
+		int spent = 0;
+		String[] itemlist = s.split(",");
+		String reeturn = ""; 
+		
+		
+		reeturn += "Buy:";
+		reeturn += "\n";
+		for(int i=1 ; i<itemlist.length ; i++){
+			reeturn += (this.slst.get(toInt(itemlist[i])).itmname);
+			reeturn += (" for ");
+			reeturn += (this.slst.get(toInt(itemlist[i])).prc);
+			reeturn += "\n"; 
+		}
+
+
+		reeturn += ("Satisfaction:");
+		reeturn += "\n";
+		reeturn += (sat);
+		reeturn += "\n";
+
+
+		reeturn += ("Spent:");
+		reeturn += "\n";
+		for(int i=1 ; i<itemlist.length ; i++){
+			spent += this.slst.get(toInt(itemlist[i])).price;
+		}
+
+		int spent1 = spent / 100;
+		int spent2 = spent % 100;
+
+		if(spent2 >= 10){
+			reeturn += (spent1 + "." + spent2);
+			reeturn += "\n";
+		}else if(spent2 == 0){
+			reeturn += (spent1 + ".00");
+			reeturn += "\n";
+		}else{
+			reeturn += (spent1 + ".0" + spent2);
+			reeturn += "\n";
+		}
+		return reeturn;
+
+	}
+
+
+	public String[] formatout(String[] res){
+		String[] answers = res[1].split("\\+");
+		
+		String[] reeturn = new String[answers.length];
+		
+		for(int i=0 ; i<answers.length ; i++){
+			reeturn[i] = printans(answers[i], res[0]);
+		}
+                return reeturn;
 	}
 
 	/*Misc methods*/

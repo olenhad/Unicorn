@@ -29,23 +29,29 @@ public class GUI extends javax.swing.JFrame {
     }
     private void configOutput(){
         String out1= "";
+        String[] out1A= null;
         if("1".equals(Algo1Chosen)){
-        for(int i=0;i< main.Algo1Res.length;i++){
-            out1=out1+"\n"+ main.Algo1Res[i];
-        }
+         out1A= main.formatout(main.Algo1Res);
+         for(int i=0;i<out1A.length;i++){
+             out1=out1+out1A[i];
+         }
         }
         
         String out2= "";
+        String[] out2A=null;
         if("1".equals(Algo2Chosen)){
-        for(int i=0;i< main.Algo2Res.length;i++){
-            out2=out2+"\n"+ main.Algo2Res[i];
+            out2A = main.formatout(main.Algo2Res);
+        for(int i=0;i< out2A.length;i++){
+            out2=out2+out2A[i];
         }
         }
         
         String out3 ="";
+        String[] out3A= null;
         if("1".equals(Algo3Chosen)){
-        for(int i=0;i< main.Algo3Res.length;i++){
-            out3=out3+"\n"+ main.Algo3Res[i];
+            out3A= main.formatout(main.Algo3Res);
+        for(int i=0;i< out3A.length;i++){
+            out3=out3+out3A[i];
         }
         }
         result.setAlgo1text(out1);
