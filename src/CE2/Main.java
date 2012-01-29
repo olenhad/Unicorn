@@ -3,6 +3,7 @@ package CE2;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Collections;
 
 
 public class Main {
@@ -117,7 +118,7 @@ public class Main {
 
 		for(int i = 0 ; i<=this.slst.size() ; i++){
 			for(int j = 0 ; j<=budget ; j++){
-				items[i][j] = "Empty";
+				items[i][j] = "";
 			}
 		}
 
@@ -385,27 +386,8 @@ public class Main {
 	/*Timing methods*/
 	
 	
-	/*Comparing methods*/
-	public boolean allEq(String[] arg1, String[] arg2, String[] arg3){
-		if (twoEq(arg1, arg2) && twoEq(arg2,arg3)){
-			return true;
-		}else{
-			return false;
-		}
-	}
 	
-	public boolean twoEq(String[] arg1, String[] arg2){
-		if(arg1 == arg2){
-			return true;
-		}else if(arg1[0] != arg2[0]){
-			return false;
-		}else if(listequal(arg1[1],arg2[1])){
-			return true;
-		}else{
-			return false;
-		}
-	}
-	/*Comparing methods*/
+	
 	
 	
 	/*Misc methods*/
@@ -542,6 +524,7 @@ public class Main {
 		}
 		return returrn;
 	}
+
         private String printans(String s, String sat){
 		
 		int spent = 0;
@@ -584,10 +567,10 @@ public class Main {
 			reeturn += (spent1 + ".0" + spent2);
 			reeturn += "\n";
 		}
+                reeturn += "\n";
 		return reeturn;
 
 	}
-
 
 	public String[] formatout(String[] res){
 		String[] answers = res[1].split("\\+");
@@ -595,10 +578,66 @@ public class Main {
 		String[] reeturn = new String[answers.length];
 		
 		for(int i=0 ; i<answers.length ; i++){
-			reeturn[i] = printans(answers[i], res[0]);
+                        reeturn[i] = "Option ";
+                        reeturn[i] += toString(i+1);
+                        reeturn[i] += "\n"; 
+			reeturn[i] += printans(answers[i], res[0]);
 		}
                 return reeturn;
 	}
+
+        public static boolean extensionality(String s1, String s2){
+		List<String> solnset1 = new LinkedList<String>();
+		List<String> solnset2 = new LinkedList<String>();
+
+		String[] ss1 = s1.split("\\+");
+		String[] ss2 = s2.split("\\+");
+
+		if(ss1.length != ss2.length){ return false; }
+
+		for(int i = 0 ; i<ss1.length ; i++){
+			solnset1.add(ss1[i]);
+			solnset2.add(ss2[i]);
+		}
+
+		Collections.sort(solnset1);
+		Collections.sort(solnset2);
+
+		return solnset1.equals(solnset2);
+	}
+
+
+	/*Comparing methods*/
+	public int[] allEq(String[] arg1, String[] arg2, String[] arg3){
+		int[] iar = new int[2];
+            if(twoEq(arg1, arg2) && twoEq(arg2,arg3)){
+                    iar[0] = 1;
+                }else{
+                iar[0]=0;
+
+                if(twoEq(arg1, arg2)){
+                    iar[1]=1;
+                }else if(twoEq(arg2, arg3)){
+                    iar[1]=2;
+                }else if(twoEq(arg1, arg3)){
+                    iar[3]=3;
+                }else{
+                    iar[3]=4;
+                }
+                }
+            return iar;
+	}
+
+	public boolean twoEq(String[] arg1, String[] arg2){
+		if(arg1 == arg2){
+			return true;
+		}else if(!arg1[0].equals(arg2[0])){
+			return false;
+		}else{
+			return extensionality(arg1[1],arg2[1]);
+		}
+	}
+	/*Comparing methods*/
 
 	/*Misc methods*/
 	

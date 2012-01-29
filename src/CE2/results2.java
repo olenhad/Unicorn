@@ -30,6 +30,9 @@ public class results2 extends javax.swing.JFrame {
     public results2() {
         initComponents();
     }
+    public void setOutputsAreSame(String S){
+        OutputsAreSame.setText(S);
+    }
     public void Algo1SetVisibile(boolean b){
         Algo1.setVisible(b);
     }
@@ -70,6 +73,8 @@ public class results2 extends javax.swing.JFrame {
         Algo1TimeLabel = new javax.swing.JLabel();
         Algo2TimeLabel = new javax.swing.JLabel();
         Algo3TimeLabel = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        OutputsAreSame = new javax.swing.JLabel();
 
         Algo1TextArea.setColumns(20);
         Algo1TextArea.setRows(5);
@@ -166,6 +171,8 @@ public class results2 extends javax.swing.JFrame {
 
         Algo3TimeLabel.setText("...");
 
+        OutputsAreSame.setText("Outputs Same?");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -188,7 +195,11 @@ public class results2 extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Algo3Time)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Algo3TimeLabel)))
+                        .addComponent(Algo3TimeLabel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(OutputsAreSame)))
                 .addGap(145, 145, 145)
                 .addComponent(jTabbedPane1)
                 .addContainerGap())
@@ -221,6 +232,10 @@ public class results2 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Algo3Time)
                             .addComponent(Algo3TimeLabel))
+                        .addGap(18, 18, 18)
+                        .addComponent(OutputsAreSame)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -239,10 +254,12 @@ public class results2 extends javax.swing.JFrame {
     private javax.swing.JTextArea Algo3TextArea;
     private javax.swing.JLabel Algo3Time;
     private javax.swing.JLabel Algo3TimeLabel;
+    private javax.swing.JLabel OutputsAreSame;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;

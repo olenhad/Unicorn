@@ -28,6 +28,7 @@ public class GUI extends javax.swing.JFrame {
         return budget;
     }
     private void configOutput(){
+        
         String out1= "";
         String[] out1A= null;
         if("1".equals(Algo1Chosen)){
@@ -53,12 +54,69 @@ public class GUI extends javax.swing.JFrame {
         for(int i=0;i< out3A.length;i++){
             out3=out3+out3A[i];
         }
+        }/*
+        String out1 ="";
+        String out2="";
+        String out3="";
+        if("1".equals(Algo1Chosen)){
+        
+         for(int i=0;i<main.Algo1Res.length;i++){
+             out1=out1+main.Algo1Res[i];
+         }
         }
+        if("1".equals(Algo2Chosen)){
+        
+         for(int i=0;i<main.Algo2Res.length;i++){
+             out2=out2+main.Algo2Res[i];
+         }
+        }
+        if("1".equals(Algo3Chosen)){
+        
+         for(int i=0;i<main.Algo3Res.length;i++){
+             out3=out3+main.Algo3Res[i];
+         }
+        }*/
         result.setAlgo1text(out1);
         result.setAlgo2text(out2);
         result.setAlgo3text(out3);
         result.setAlgoTimeLabels(main.Algo1Time, main.Algo2Time, main.Algo3Time);
+        if(Algo1Chosen=="1"&& Algo2Chosen=="1"&& Algo3Chosen=="1"){
+            
         
+        if(main.allEq(main.Algo1Res, main.Algo2Res, main.Algo3Res)[0]==1){
+            result.setOutputsAreSame("All Outputs are the same");
+        } 
+        else{
+            switch(main.allEq(main.Algo1Res, main.Algo2Res, main.Algo3Res)[1]){
+                case 1: {result.setOutputsAreSame("Recursion returns a different answer.") ;break;}
+                case 2: {result.setOutputsAreSame("Dynamic Programming returns a different answer."); break;}
+                case 3: {result.setOutputsAreSame("Brute Force returns a different answer."); break;}
+                case 4: {result.setOutputsAreSame("All Algos return different answers."); break;}
+                default: result.setOutputsAreSame("Something's up. It must be YOUR machine. It worked on mine."); break;
+            }
+        }
+        }
+        else if(Algo1Chosen=="1"&& Algo2Chosen=="1"&& Algo3Chosen=="0"){
+            if(main.twoEq(main.Algo1Res, main.Algo2Res)){
+                result.setOutputsAreSame("Both outputs are equal");
+            }else{
+                result.setOutputsAreSame("Both outputs are not equal");
+            }
+        }
+        else if(Algo1Chosen=="0"&& Algo2Chosen=="1"&& Algo3Chosen=="1"){
+            if(main.twoEq(main.Algo2Res, main.Algo3Res)){
+                result.setOutputsAreSame("Both outputs are equal");
+            }else{
+                result.setOutputsAreSame("Both outputs are not equal");
+            }
+        }
+        else if(Algo1Chosen=="1"&& Algo2Chosen=="0"&& Algo3Chosen=="1"){
+            if(main.twoEq(main.Algo1Res, main.Algo3Res)){
+                result.setOutputsAreSame("Both outputs are equal");
+            }else{
+                result.setOutputsAreSame("Both outputs are not equal");
+            }
+        }
     }
     private String[] getInput(){
         String s;
