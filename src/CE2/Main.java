@@ -586,7 +586,7 @@ public class Main {
                 return reeturn;
 	}
 
-        public static boolean extensionality(String s1, String s2){
+    public static boolean extensionality(String s1, String s2){
 		List<String> solnset1 = new LinkedList<String>();
 		List<String> solnset2 = new LinkedList<String>();
 
@@ -596,6 +596,39 @@ public class Main {
 		if(ss1.length != ss2.length){ return false; }
 
 		for(int i = 0 ; i<ss1.length ; i++){
+			String[] temp1 = ss1[i].split(",");
+			String[] temp2 = ss2[i].split(",");
+			
+			int[] num1 = new int[temp1.length-1];
+			int[] num2 = new int[temp2.length-1];
+			
+			for(int x = 1 ; x<temp1.length ; x++){
+				num1[x-1] = toInt(temp1[x]);
+			}
+			for(int y = 1 ; y<temp1.length ; y++){
+				num2[y-1] = toInt(temp2[y]);
+			}
+						
+			
+			Arrays.sort(num1);
+			Arrays.sort(num2);
+			
+			String tmp1 = "";
+			String tmp2 = "";
+			
+			for(int j = 0 ; j<num1.length ; j++){
+				tmp1 += "," + toString(num1[j]);
+			}
+			
+			for(int k = 0 ; k<num2.length ; k++){
+				tmp2 += "," + toString(num2[k]);
+			}
+			
+			ss1[i] = tmp1;
+			ss2[i] = tmp2;
+			
+			
+			
 			solnset1.add(ss1[i]);
 			solnset2.add(ss2[i]);
 		}
