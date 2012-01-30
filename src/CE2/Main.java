@@ -4,6 +4,7 @@ package CE2;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Collections;
+import java.util.Arrays;
 
 
 public class Main {
@@ -130,7 +131,7 @@ public class Main {
 
 		String[] answer = new String[2];
 		answer[0] = memo[this.slst.size()][budget] + "";
-		answer[1] = items[this.slst.size()][budget];
+		answer[1] =   items[this.slst.size()][budget];
 		this.Algo1Res = answer;
                 Algo1Done=true;
 		return answer;
@@ -333,7 +334,7 @@ public class Main {
 
 		String[] answer = new String[2];
 		answer[0] = toString(maxsat);
-		answer[1] = temp;
+		answer[1] =   temp;
 		
 		this.Algo2Res = answer;
                 Algo2Done=true;
@@ -405,12 +406,13 @@ public class Main {
 	}
 
 	private static String appendAll(String x, String y){
-		String result = ",";
+		String result = "";
 		String[] options = x.split("\\+");
 		for(int i=0 ; i<options.length-1 ; i++){
 			result += options[i] + "," + y + "+";
 		}
 		result += options[options.length-1];
+                result += ","+y;
 		return result;
 	}
 
@@ -528,6 +530,7 @@ public class Main {
         private String printans(String s, String sat){
 		
 		int spent = 0;
+               // if(s.charAt(0) != ','){ s = ','+ s;}
 		String[] itemlist = s.split(",");
 		String reeturn = ""; 
 		
@@ -538,6 +541,9 @@ public class Main {
 			reeturn += (this.slst.get(toInt(itemlist[i])).itmname);
 			reeturn += (" for ");
 			reeturn += (this.slst.get(toInt(itemlist[i])).prc);
+                        reeturn += " (sat ";
+                        reeturn +=(this.slst.get(toInt(itemlist[i])).sat);
+                        reeturn += ")";
 			reeturn += "\n"; 
 		}
 
@@ -580,8 +586,10 @@ public class Main {
 		for(int i=0 ; i<answers.length ; i++){
                         reeturn[i] = "Option ";
                         reeturn[i] += toString(i+1);
+                        reeturn[i] += answers[i];
                         reeturn[i] += "\n"; 
 			reeturn[i] += printans(answers[i], res[0]);
+                        
 		}
                 return reeturn;
 	}
@@ -667,7 +675,7 @@ public class Main {
 		}else if(!arg1[0].equals(arg2[0])){
 			return false;
 		}else{
-			return extensionality(arg1[1],arg2[1]);
+			return true;//extensionality(arg1[1],arg2[1]);
 		}
 	}
 	/*Comparing methods*/

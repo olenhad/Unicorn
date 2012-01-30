@@ -57,7 +57,11 @@ public class GUI extends javax.swing.JFrame {
         }/*
         String out1 ="";
         String out2="";
-        String out3="";
+        String out3="";*/
+        out1=out1+"\n";
+        out2=out2+"\n";
+        out3= out3+"\n";
+                
         if("1".equals(Algo1Chosen)){
         
          for(int i=0;i<main.Algo1Res.length;i++){
@@ -75,7 +79,7 @@ public class GUI extends javax.swing.JFrame {
          for(int i=0;i<main.Algo3Res.length;i++){
              out3=out3+main.Algo3Res[i];
          }
-        }*/
+        }
         result.setAlgo1text(out1);
         result.setAlgo2text(out2);
         result.setAlgo3text(out3);
