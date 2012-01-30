@@ -405,7 +405,7 @@ public class Main {
 	}
 
 	private static String appendAll(String x, String y){
-		String result = "";
+		String result = ",";
 		String[] options = x.split("\\+");
 		for(int i=0 ; i<options.length-1 ; i++){
 			result += options[i] + "," + y + "+";
