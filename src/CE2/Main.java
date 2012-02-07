@@ -40,8 +40,9 @@ public class Main {
 		for(int i = 0 ; i<items.length ; i++){
                     String[] args = items[i].split("\\s");
                         if(args[1].contains(dot)){
-                            String[] price = args[1].split("\\.");
-                             xprice = 100 * toInt(price[0]) + toInt(price[1]);
+                            double d= Double.valueOf(args[1]);//Ivan's idea
+                            xprice = (int) (d*100);
+                            
                         }
                         else
                         {
