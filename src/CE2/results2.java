@@ -63,9 +63,6 @@ public class results2 extends javax.swing.JFrame {
         scrollPane3 = new java.awt.ScrollPane();
         jScrollPane4 = new javax.swing.JScrollPane();
         Algo3TextArea = new javax.swing.JTextArea();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Algo1Time = new javax.swing.JLabel();
         Algo2Time = new javax.swing.JLabel();
@@ -75,6 +72,8 @@ public class results2 extends javax.swing.JFrame {
         Algo3TimeLabel = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         OutputsAreSame = new javax.swing.JLabel();
+
+        setPreferredSize(new java.awt.Dimension(800, 600));
 
         Algo1TextArea.setColumns(20);
         Algo1TextArea.setRows(5);
@@ -88,18 +87,18 @@ public class results2 extends javax.swing.JFrame {
             Algo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Algo1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
                 .addContainerGap())
         );
         Algo1Layout.setVerticalGroup(
             Algo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Algo1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addComponent(scrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Algo1", Algo1);
+        jTabbedPane1.addTab("Dynamic Programming", Algo1);
 
         Algo2TextArea.setColumns(20);
         Algo2TextArea.setRows(5);
@@ -113,18 +112,18 @@ public class results2 extends javax.swing.JFrame {
             Algo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Algo2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(scrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
                 .addContainerGap())
         );
         Algo2Layout.setVerticalGroup(
             Algo2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Algo2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addComponent(scrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Algo2", Algo2);
+        jTabbedPane1.addTab("Brute Force", Algo2);
 
         Algo3TextArea.setColumns(20);
         Algo3TextArea.setRows(5);
@@ -138,32 +137,26 @@ public class results2 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
+                .addComponent(scrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(scrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 287, Short.MAX_VALUE)
+                .addComponent(scrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 519, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane1.addTab("Algo3", jPanel1);
+        jTabbedPane1.addTab("Recursion", jPanel1);
 
-        jLabel1.setText("Algo1 : Dynamic Programming");
+        jLabel4.setText("<html>\n<b>\nTime Taken:\n</b>\n</html>");
 
-        jLabel2.setText("Algo2 : Brute Force");
+        Algo1Time.setText("Dynamic : ");
 
-        jLabel3.setText("Algo3 : Recursion");
+        Algo2Time.setText("Brute:");
 
-        jLabel4.setText("Time Taken:");
-
-        Algo1Time.setText("Algo1: ");
-
-        Algo2Time.setText("Algo2:");
-
-        Algo3Time.setText("Algo3:");
+        Algo3Time.setText("Recursion:");
 
         Algo1TimeLabel.setText("...");
 
@@ -180,28 +173,26 @@ public class results2 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Algo1Time)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(Algo1TimeLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Algo2Time)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Algo2TimeLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Algo3Time)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(Algo3TimeLabel))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(OutputsAreSame)))
-                .addGap(145, 145, 145)
-                .addComponent(jTabbedPane1)
+                        .addComponent(OutputsAreSame))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(Algo2Time)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(Algo2TimeLabel))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(Algo3Time)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(Algo3TimeLabel))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -212,14 +203,8 @@ public class results2 extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(jTabbedPane1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addGap(57, 57, 57)
-                        .addComponent(jLabel4)
+                        .addGap(157, 157, 157)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Algo1Time)
@@ -255,9 +240,6 @@ public class results2 extends javax.swing.JFrame {
     private javax.swing.JLabel Algo3Time;
     private javax.swing.JLabel Algo3TimeLabel;
     private javax.swing.JLabel OutputsAreSame;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
