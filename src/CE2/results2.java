@@ -13,6 +13,9 @@ public class results2 extends javax.swing.JFrame {
     /**
      * Creates new form results2
      */
+    public void setOutputsAreSameVis(boolean v){
+        OutputsAreSame.setVisible(v);
+    }
     public void setAlgo1text(String S){
         Algo1TextArea.setText(S);
     }

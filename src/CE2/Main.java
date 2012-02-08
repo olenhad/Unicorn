@@ -587,7 +587,7 @@ public class Main {
 		for(int i=0 ; i<answers.length ; i++){
                         reeturn[i] = "Option ";
                         reeturn[i] += toString(i+1);
-                        reeturn[i] += answers[i];
+                        //reeturn[i] += answers[i];
                         reeturn[i] += "\n"; 
 			reeturn[i] += printans(answers[i], res[0]);
                         

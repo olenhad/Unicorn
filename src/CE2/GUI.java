@@ -61,7 +61,7 @@ public class GUI extends javax.swing.JFrame {
         out1=out1+"\n";
         out2=out2+"\n";
         out3= out3+"\n";
-                
+        /*        
         if("1".equals(Algo1Chosen)){
         
          for(int i=0;i<main.Algo1Res.length;i++){
@@ -79,6 +79,10 @@ public class GUI extends javax.swing.JFrame {
          for(int i=0;i<main.Algo3Res.length;i++){
              out3=out3+main.Algo3Res[i];
          }
+        }*/
+        double test = Double.parseDouble(Algo1Chosen)+Double.parseDouble(Algo2Chosen)+Double.parseDouble(Algo3Chosen);
+        if(test ==1){
+            result.setOutputsAreSameVis(false);
         }
         result.setAlgo1text(out1);
         result.setAlgo2text(out2);
